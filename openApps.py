@@ -29,10 +29,7 @@ def OpenApps(query):
             
             elif 'facebook' in query:
                 webbrowser.open('https://www.facebook.com/')
-            
-            elif 'telegram' in query:
-                webbrowser.open('https://web.telegram.org/')
-            
+                        
             elif 'whatsapp' in query:
                 webbrowser.open('https://web.whatsapp.com/')
 
@@ -42,6 +39,10 @@ def OpenApps(query):
             elif 'maps' in query:
                 webbrowser.open('https://www.google.com/maps/@28.7091225,77.2749958,15z')
 
+            elif 'zoom' in query:
+                speak('Opening Zoom.')
+                os.system("C:/Users/rohit/AppData/Roaming/Zoom/bin/Zoom.exe")
+    
             elif 'youtube' in query:
                 webbrowser.open('https://www.youtube.com')
 
