@@ -261,8 +261,6 @@ def WhatsAppTools(name_of_ai):
 
 #################################### ZOOM TOOLS ####################################
 def ZoomTools():
-    speak('Opening Zoom.')
-    os.system("C:/Users/rohit/AppData/Roaming/Zoom/bin/Zoom.exe")
     def join():
         speak('Whose class you wanna join?')
         pyautogui.click(541,311)
@@ -439,17 +437,18 @@ def YoutubeTools(name_of_ai):
             elif 'exit' in comm:
                 break
             elif 'search' in comm:
-                pyautogui.click(x=343, y=96)
+                pyautogui.press("/")
                 Speak=("What To Search Sir ?")
                 search = takeCommand()
                 keyboard.write(search)
                 sleep(0.8)
+                speak("Say enter to confirm if not then say search")
             elif "enter" in comm:
                 pyautogui.click(x=927, y=97)
                 keyboard.press("enter")
             elif "history" in comm:
-                 pyautogui.click(x=74, y=344)
-                 keyboard.press("enter")  
+                 pyautogui.press("ctrl + l")
+                 keyboard.write("youtube.com/feed/history")  
             else:
                 pass
 
@@ -464,8 +463,7 @@ def GoogleTools(name_of_ai):
         message=notification_message,
         timeout=3
     )
-    def done():
-        speak("Done Sir")
+    
     while True:
         speak("Whats Your Command ?")
         comm = takeCommand()
@@ -475,12 +473,6 @@ def GoogleTools(name_of_ai):
         pyautogui.click(796,323)
         keyboard.write(search_word)
         keyboard.press('enter')
-        if comm == "":
-            speak("No command is spoken")
-        elif 'read' in comm:
-            done()
-        else:
-            pass
 
 
 
